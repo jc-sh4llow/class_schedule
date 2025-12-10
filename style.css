@@ -24,7 +24,7 @@ html,
 body {
   margin: 0;
   padding: 0;
-  height: 100%;
+  min-height: 100%;
   font-family: var(--font-sans);
   background: radial-gradient(circle at top left, #1e293b, #020617 60%);
   color: var(--text);
@@ -40,6 +40,7 @@ body {
   flex: 1;
   max-width: 1200px;
   margin: 16px;
+  min-height: 0;
   border-radius: 24px;
   background: radial-gradient(circle at 0 0, rgba(56, 189, 248, 0.12), transparent 55%),
     radial-gradient(circle at 100% 100%, rgba(129, 140, 248, 0.14), transparent 40%),
@@ -556,9 +557,29 @@ select:focus {
 }
 
 @media (max-width: 768px) {
+  html, body {
+    height: auto;
+    overflow-y: auto;
+  }
+
   .app-shell {
     margin: 8px;
     border-radius: 18px;
+    overflow: visible;
+    min-height: auto;
+  }
+
+  .schedule-wrapper {
+    min-height: auto;
+  }
+
+  .time-column-cells {
+    flex: none;
+  }
+
+  .time-cell {
+    height: 70px;
+    flex: none;
   }
 
   .app-header h1 {
