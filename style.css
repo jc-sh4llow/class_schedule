@@ -571,6 +571,15 @@ select:focus {
 
   .schedule-wrapper {
     min-height: auto;
+    display: flex;
+    overflow: hidden;
+  }
+
+  .time-column-fixed {
+    position: sticky;
+    left: 0;
+    z-index: 10;
+    flex-shrink: 0;
   }
 
   .time-column-cells {
@@ -580,6 +589,12 @@ select:focus {
   .time-cell {
     height: 70px;
     flex: none;
+  }
+
+  .schedule-scroll {
+    flex: 1;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
   }
 
   .app-header h1 {
